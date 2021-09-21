@@ -115,5 +115,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. /home/andreneji/.asdf/asdf.sh
-. /home/andreneji/.asdf/completions/asdf.bash
+
+# habilitar asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
