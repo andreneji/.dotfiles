@@ -101,6 +101,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias vi=nvim
+alias vim=nvim
+alias cbl='vi /mnt/c/Fontes/'
+alias lo='ls -ld .[^.]*' # lista apenas dotfiles
+alias ls='ls -F --group-directories-first --color=always'
+alias rm='rm -iv'
 
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
@@ -115,7 +122,8 @@ SPACESHIP_PROMPT_ORDER=(
   exit_code     # Exit code section
   char          # Prompt character
 )
-# SPACESHIP_USER_SHOW=always
+
+SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
@@ -175,3 +183,10 @@ zinit light zsh-users/zsh-completions
 # desabilita abrir em outra janela o git log, por exemplo
 # unset LESS;
 PAGER=
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Sempre que abrir o terminal o tmux inicia junto
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
