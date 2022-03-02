@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -9,8 +16,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="spaceship"
 # ZSH_THEME="bira"
+#ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -102,41 +110,37 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias vi=nvim
-alias vim=nvim
-alias cbl='vi /mnt/c/Fontes/'
-alias lo='ls -ld .[^.]*' # lista apenas dotfiles
-alias ls='ls -F --group-directories-first --color=always'
-alias rm='rm -iv'
 
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  exec_time     # Execution time
-  line_sep      # Line break
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
+# ===========  Theme Spaceship
+#
+#SPACESHIP_PROMPT_ORDER=(
+#  user          # Username section
+#  dir           # Current directory section
+#  host          # Hostname section
+#  git           # Git section (git_branch + git_status)
+#  hg            # Mercurial section (hg_branch  + hg_status)
+#  exec_time     # Execution time
+#  line_sep      # Line break
+#  vi_mode       # Vi-mode indicator
+#  jobs          # Background jobs indicator
+#  exit_code     # Exit code section
+#  char          # Prompt character
+#)
+#
+#SPACESHIP_USER_SHOW=always
+#SPACESHIP_PROMPT_ADD_NEWLINE=false
+#SPACESHIP_CHAR_SYMBOL="❯"
+#SPACESHIP_CHAR_SUFFIX=" "
+#
+## SPACESHIP_PROMPT_ADD_NEWLINE=true
+#SPACESHIP_PROMPT_SEPARATE_LINE=false
 
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="❯"
-SPACESHIP_CHAR_SUFFIX=" "
+# =========== Added by Zinit's installer ===============
 
-# SPACESHIP_PROMPT_ADD_NEWLINE=true
-SPACESHIP_PROMPT_SEPARATE_LINE=false
-
-### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    # command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-    command git clone git@github.com:zdharma-continuum/zinit.git "$HOME/.zinit/bin" && \
+    command git clone https://github.com/zdharma-continuum/zinit.git "$HOME/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -148,13 +152,6 @@ autoload -Uz _zinit
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 
-# zinit light-mode for \
-#     zinit-zsh/z-a-rust \
-#     zinit-zsh/z-a-as-monitor \
-#     zinit-zsh/z-a-patch-dl \
-#     zinit-zsh/z-a-bin-gem-node
-
-
 zinit light-mode for \
     zdharma-continuum/zinit-annex-as-monitor \
     zdharma-continuum/zinit-annex-bin-gem-node \
@@ -164,29 +161,50 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 # Adiciona syntax highlighting na hora da escrita de comandos que facilita principalmente em reconhecer comandos que foram digitados de forma incorreta;
-# zinit light zdharma/fast-syntax-highlighting
 zinit light zdharma-continuum/fast-syntax-highlighting
 # Sugere comandos baseados no histórico de execução conforme você vai digitando;
 zinit light zsh-users/zsh-autosuggestions
 # Adiciona milhares de completitions para ferramentas comuns como Yarn, Homebrew, NVM, Node, etc, para você precisar apenas apertar TAB para completar comandos;
 zinit light zsh-users/zsh-completions
 
-# habilitar asdf
-. $HOME/.asdf/asdf.sh
-# . $HOME/.asdf/completions/asdf.bash
+# =========== configurações personalizadas ===============
 
-# testes
-#autoload -U zranger
-#bindkey -s '\ez' "\eq zranger\n"
-#FPATH=$HOME/.fpath:$FPATH
-
-# desabilita abrir em outra janela o git log, por exemplo
-# unset LESS;
-PAGER=
-
+#―――――――――――――――――――――――――――――
+# busca fuzzy
+#―――――――――――――――――――――――――――――
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Sempre que abrir o terminal o tmux inicia junto
-# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#   exec tmux
-# fi
+#―――――――――――――――――――――――――――――
+# habilitar asdf
+#―――――――――――――――――――――――――――――
+. $HOME/.asdf/asdf.sh
+
+#―――――――――――――――――――――――――――――
+# desabilita abrir em outra janela o git log, por exemplo
+#―――――――――――――――――――――――――――――
+PAGER=
+
+#―――――――――――――――――――――――――――――
+# aliases
+#―――――――――――――――――――――――――――――
+alias vi='vim'
+alias vim='nvim'
+alias cbl='vi /mnt/c/Fontes/'                                # win - criar dir. c:/Fontes/
+alias lo='ls -lhd .[^.]*'                                    # lista apenas dotfiles
+alias rm='rm -iv'                                            # (i)nterativo / (v)erbose
+alias tks='tmux kill-server'
+
+# cargo install (ferramenta em rust)
+#alias ls='ls -F --group-directories-first --color=always'
+alias ls='exa -F --group-directories-first --icons'
+alias cat='bat'
+
+#―――――――――――――――――――――――――――――
+# variável de ambiente
+#―――――――――――――――――――――――――――――
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
+
+#―――――――――――――――――――――――――――――
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#―――――――――――――――――――――――――――――
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
