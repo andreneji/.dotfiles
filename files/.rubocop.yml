@@ -1,0 +1,22 @@
+# AllCops:
+  # TargetRubyVersion: 3.1
+  # NewCops: enable
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+# Style/FrozenStringLiteralComment:
+#   Exclude:
+#     - '**/Brewfile'
+
+# Style/NumericLiterals:
+#   Exclude:
+#     - '**/Brewfile'
+
+# Style/StringLiterals:
+#   EnforcedStyle: double_quotes
+
+Style/Documentation:
+  Enabled: false
