@@ -5,14 +5,3 @@ export PATH="$HOME/.local/bin":$PATH
 
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
-
-export PATH=$HOME/.cargo/bin:$PATH
-
-export PATH=$HOME/.local/share/go/bin:$PATH
-export GOPATH=$HOME/.local/share/go
-
-export PATH="$PATH:./node_modules/.bin"
-
-NPM_PACKAGES="$HOME/.npm-packages"                      # NPM packages in homedir
-PATH="$NPM_PACKAGES/bin:$PATH"                          # Tell our environment about user-installed node tools
-NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"   # Tell Node about these packages

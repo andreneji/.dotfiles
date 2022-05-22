@@ -9,12 +9,9 @@ fi
 
 # =========== Configurações ===============
 
-# habilitar asdf
-if [ -d "$HOME/.asdf/asdf.sh" ]; then
-    . $HOME/.asdf/asdf.sh    # ZSH & Git
-else
-    . /opt/asdf-vm/asdf.sh   # ZSH & Pacman
-fi
+# Habilita asdf
+[[ ! -f /opt/asdf-vm/asdf.sh ]] || . /opt/asdf-vm/asdf.sh  # ZSH & Pacman
+[[ ! -f $HOME/.asdf/asdf.sh ]]  || . $HOME/.asdf/asdf.sh   # ZSH & Git
 
 # desabilita abrir em outra janela o git log, por exemplo
 PAGER=
@@ -112,7 +109,7 @@ autoload edit-command-line; zle -N edit-command-line
 # Environment variables set everywhere
 export EDITOR="lvim"
 #export TERMINAL="alacritty"
-export BROWSER="brave"
+#export BROWSER="brave"
 
 # For QT Themes
 export QT_QPA_PLATFORMTHEME=qt5ct
