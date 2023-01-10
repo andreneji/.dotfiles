@@ -1,1 +1,1 @@
-/home/andreneji/.dotfiles/zsh/.zshrc
+/home/andreneji/.zshrc

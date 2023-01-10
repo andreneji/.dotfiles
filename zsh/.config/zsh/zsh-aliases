@@ -11,12 +11,18 @@ alias lo='ls -lhd .[^.]*'     # Lista apenas dotfiles
 alias tksa='tmux kill-server'
 alias tks='tmux kill-session'
 alias mux='tmuxinator'
-alias map='vi ~/.config/lvim/lua/map.lua'
-alias ali='vi ~/.config/zsh/zsh-aliases'
+alias map='vim ~/.config/lvim/lua/map.lua'
+alias ali='vim ~/.config/zsh/zsh-aliases'
+# alias w='nitrogen --set-scaled --random ~/Pictures/Wallpapers/'
+alias x1='source ~/.screenlayout/lap.sh'
+alias x2='source ~/.screenlayout/monitor_lap.sh'
+
+alias ddate='date + "%R - %a, %B %d, %Y"'
 
 # exa / bat - cargo install (ferramenta em rust)
 alias ls='exa -F --group-directories-first --icons'
 alias l='ls -lah'
+alias ll='ls -lh'
 alias cat='bat'
 
 # Colorize grep output (good for log files)
@@ -88,3 +94,72 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -5' # get top process eating cpu ##
 # 	# echo 'Other OS'
 # 	;;
 # esac
+#
+
+
+##################################
+############# ALIAS ##############
+##################################
+
+##alias la='ls -a'
+##alias ll='ls -l'
+##alias lla='ls -al'
+##alias rm='rm -r'
+##alias ls='ls --color=auto'
+
+alias xrandr2560='xrandr --output HDMI-0 --mode 2560x1080'
+alias xrandr1920='xrandr --output HDMI-0 --mode 1920x1080'
+alias xrandr1280='xrandr --output HDMI-0 --mode 1280x720'
+
+alias ncspot='~/.config/ncspot/ncspot'
+alias tarz='tar -zxvf'
+##alias vim='nvim'
+alias unrar='unrar x'
+alias fetch='clear && neofetch'
+alias feh='devour feh'
+alias mpv='devour mpv'
+alias dl='youtube-dl'
+alias fetch6000='fm6000 -c blue'
+alias mupdf='devour mupdf'
+
+#----------------------------------#
+# alias xr='sudo xbps-remove -R'
+# alias xq='xbps-query -Rs'
+# alias xo='sudo xbps-remove -o'
+# alias xi='sudo xbps-install'
+# alias xu='sudo xbps-install -Su'
+
+alias s='sudo'
+alias xr='paru -R'                 # Remover pacotes
+# alias xra='paru -Rns'              # Remover todas as dependências desnecessárias do sistema
+# alias xo='paru -Yc'                # Remover pacotes que o sistema não precisa
+alias xq='paru -Q'                 # Pesquisar versão do app instalado
+alias xi='paru -S'                 # Instalar
+alias xu='paru -Syyu'              # Atualizar sistema
+alias update='pacman -Syyu'
+
+#----------------------------------#
+alias comp="echo '[ chaveX = chaveY ] && echo IGUAL || echo DIFERENTE'"
+alias cddwm='cd .config/dwm'
+alias cdawesome='cd .config/awesome'
+
+alias dot='cd ~/.dotfiles/'
+alias awe='vim ~/.config/awesome/rc.lua'
+alias rclua='vim ~/.config/awesome/rc.lua'
+alias i3config='vim ~/.config/i3/config'
+alias yml='vim ~/.config/alacritty/alacritty.yml'
+alias bashrc='vim ~/.bashrc'
+alias gtk='vim ~/.config/gtk-3.0/gtk.css'
+alias roteiros='vim Documentos/TWMLINUX'
+alias cus='vim ~/.config/lvim/lua/custom.lua'
+alias zshrc='vim ~/.zshrc'
+alias bashrc='vim ~/.bashrc'
+alias init.vim='vim ~/.config/nvim/init.vim'
+alias picom='vim ~/.config/awesome/picom.conf'
+# alias keybinds='vim Documentos/Keybinds'
+alias twm.vim='sudo vim /usr/share/nvim/runtime/colors/twm.vim'
+alias kitty.conf='vim ~/.config/kitty/kitty.conf'
+
+##################################
+############# ALIAS ##############
+##################################

@@ -30,6 +30,9 @@ unsetopt BEEP
 
 # completions
 autoload -Uz compinit
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
 zstyle ':completion:*' menu select
 # zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
@@ -107,9 +110,9 @@ autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
 
 # Environment variables set everywhere
-export EDITOR="lvim"
-#export TERMINAL="alacritty"
-#export BROWSER="brave"
+export EDITOR="lvim"  # utilizando no Ranger
+export TERMINAL="alacritty"
+export BROWSER="firefox"
 
 # For QT Themes
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -119,7 +122,13 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # swap escape and caps
 # setxkbmap -option caps:swapescape
 
+# =========== tmux + zsh ===========
+#ln -s ~/.zshrc ~/.config/zsh
+
 # =========== Powerlevel10k ===========
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+
+# GITSTATUS_LOG_LEVEL=DEBUG
