@@ -1,3 +1,6 @@
-nvim/
-lvim/
+nvim/.config/nvim
+Awesome/.config/awesome
+lvim/.config/lvim
 zsh/.config/zsh/.zdirs
+Revisar/
+Scripts/.config/Scripts
